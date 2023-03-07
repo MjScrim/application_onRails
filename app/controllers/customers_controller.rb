@@ -8,6 +8,7 @@ class CustomersController < ApplicationController
 
   # GET /customers/1 or /customers/1.json
   def show
+    @parametros = params
   end
 
   # GET /customers/new
@@ -25,7 +26,7 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to customer_url(@customer), notice: "Customer was successfully created." }
+        format.html { redirect_to customer_url(@customer), notice: "Cadastro com sucesso" }
         format.json { render :show, status: :created, location: @customer }
       else
         format.html { render :new, status: :unprocessable_entity }
