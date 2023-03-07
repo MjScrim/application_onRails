@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :customers
 
+  resources :welcome
+
   root 'welcome#index'
 
   get '/init' => 'welcome#enter'
